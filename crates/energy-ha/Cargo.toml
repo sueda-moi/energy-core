@@ -1,0 +1,23 @@
+[package]
+name = "energy-ha"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 1. 异步运行时
+tokio = { version = "1.0", features = ["full"] }
+
+# 2. WebSocket 客户端 (基于 Tokio)
+tokio-tungstenite = { version = "0.20", features = ["native-tls"] }
+
+# 3. JSON 处理 (解析 HA 发来的消息)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 4. URL 解析
+url = "2.4"
+
+# 5. 错误处理
+thiserror = "1.0"
+futures-util = "0.3" # 处理 WebSocket 流必须的工具
+tracing = "0.1"      # 打日志

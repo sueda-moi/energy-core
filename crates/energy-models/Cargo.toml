@@ -1,0 +1,12 @@
+[package]
+name = "energy-models"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 1. 序列化 (让数据能变成 JSON 发给前端)
+serde = { version = "1.0", features = ["derive"] }
+# 2. 时间处理 (对应 SQL 的 TIMESTAMPTZ)
+chrono = { version = "0.4", features = ["serde"] }
+# 3. 数据库映射 (让 struct 能直接从 SQL 结果里读出来)
+sqlx = { version = "0.7", features = ["postgres", "chrono", "runtime-tokio-native-tls"] }

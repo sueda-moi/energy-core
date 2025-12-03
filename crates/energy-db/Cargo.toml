@@ -1,0 +1,18 @@
+[package]
+name = "energy-db"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 1. 异步运行时
+tokio = { version = "1.0", features = ["full"] }
+
+# 2. 数据库核心 
+sqlx = { version = "0.7", features = ["runtime-tokio-native-tls", "postgres", "chrono", "uuid", "macros"] }
+
+# 3. 错误处理 
+thiserror = "1.0"
+
+# 4. 其他辅助
+serde = { version = "1.0", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }

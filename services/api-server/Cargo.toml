@@ -1,0 +1,16 @@
+[package]
+name = "api-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 引入本地项目
+energy-models = { path = "../../crates/energy-models" }
+energy-db = { path = "../../crates/energy-db" }
+energy-ha = { path = "../../crates/energy-ha" }
+
+# 标准依赖
+tokio = { version = "1.0", features = ["full"] }
+dotenvy = "0.15" # 用来读取 .env 文件
+tracing = "0.1"  # 日志
+tracing-subscriber = "0.3"

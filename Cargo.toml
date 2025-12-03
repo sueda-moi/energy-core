@@ -1,0 +1,3 @@
+[workspace]
+resolver = "2"
+members = [ "crates/energy-db", "crates/energy-ha","crates/energy-models", "services/api-server"]
